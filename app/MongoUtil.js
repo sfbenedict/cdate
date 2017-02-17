@@ -55,3 +55,55 @@ exports.modelQuery = function(modelType, conditions, fieldsStr, callback) {
 		//});
 	}
 }
+
+exports.login = function(modelType, modelData) {
+
+}
+
+exports.signup = function(modelType, modelData) {
+
+}
+
+exports.profileAdd = function(modelType, modelData){
+
+}
+
+exports.profileUpdate = function(modelType, modelData){
+
+}
+
+exports.search = function(modelType, modelData){
+
+}
+
+exports.messageSend = function(modelType, modelData){
+
+}
+
+exports.messagesGet = function(modelType, modelData){
+
+}
+
+exports.book = function(modelType, modelData){
+
+}
+
+exports.confirm = function(modelType, modelData){
+
+}
+
+exports.purchases = function(modelType, modelData){
+
+}
+
+exports.payments = function(modelType, modelData){
+
+}
+
+exports.feedbackAdd  = function(modelType, modelData){
+
+}
+
+exports.feedbackGet  = function(modelType, modelData){
+
+}

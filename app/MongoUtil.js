@@ -5,8 +5,6 @@ var ModelRegistry = require('./ModelRegistry');
 
 var db;
 
-
-
 exports.init = function() {
 	var mongoUrl = _getMongoUrl();
 
@@ -26,6 +24,16 @@ function _getMongoUrl() {
 }
 
 exports.modelCreate = function(modelType, modelData) {
+	var modelInstance = ModelRegistry.createModelInstance(modelType, modelData);
+
+	if(modelInstance) {
+		modelInstance.save(function(err) {
+			if(err) throw err;
+		});
+	}
+}
+
+exports.modelUpdate = function(modelType, modelData) {
 	var modelInstance = ModelRegistry.createModelInstance(modelType, modelData);
 
 	if(modelInstance) {
@@ -56,54 +64,7 @@ exports.modelQuery = function(modelType, conditions, fieldsStr, callback) {
 	}
 }
 
-exports.login = function(modelType, modelData) {
-
-}
-
-exports.signup = function(modelType, modelData) {
-
-}
-
-exports.profileAdd = function(modelType, modelData){
-
-}
-
-exports.profileUpdate = function(modelType, modelData){
-
-}
-
-exports.search = function(modelType, modelData){
-
-}
-
-exports.messageSend = function(modelType, modelData){
-
-}
-
-exports.messagesGet = function(modelType, modelData){
-
-}
-
-exports.book = function(modelType, modelData){
-
-}
-
-exports.confirm = function(modelType, modelData){
-
-}
-
-exports.purchases = function(modelType, modelData){
-
-}
-
-exports.payments = function(modelType, modelData){
-
-}
-
-exports.feedbackAdd  = function(modelType, modelData){
-
-}
-
-exports.feedbackGet  = function(modelType, modelData){
-
+exports.validate = function(modelType, action, accountId){
+	// add model action validation
+	return true;
 }

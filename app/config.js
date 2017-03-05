@@ -7,3 +7,7 @@ exports.db = {
 	base_url: 'mongodb://sa:Summer2017!@ds151068.mlab.com:51068/',
 	name: 'fordate'
 };
+
+exports.key = {
+	'superSecret': 'ilovescotchyscotch'
+}

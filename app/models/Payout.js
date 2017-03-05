@@ -18,6 +18,6 @@ var payoutSchema = new Schema({
     isActive: Boolean
 });
 
-var Payout = mongoose.model('Payout', paymentSchema);
+var Payout = mongoose.model('Payout', payoutSchema);
 
 module.exports = Payout;

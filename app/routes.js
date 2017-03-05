@@ -5,6 +5,15 @@ exports.setup = function(app) {
 
 	var ModelTypes = require('./ModelTypes');
 
+
+    //remove
+	app.get('/items', function(req, res, next) {
+		MongoUtil.modelQuery(ModelTypes.ITEM, {}, "", function(docs) {
+			res.json(docs);
+			return next();
+		});
+	});
+
 	app.post('/authenticate',function(req, res, next){
 
         MongoUtil.modelQuery(ModelTypes.USER, {}, "", function(docs) {
@@ -79,13 +88,7 @@ exports.setup = function(app) {
 		
 	});
 
-    //remove
-	app.get('/items', function(req, res, next) {
-		MongoUtil.modelQuery(ModelTypes.ITEM, {}, "", function(docs) {
-			res.json(docs);
-			return next();
-		});
-	});
+
 
 	// account create
 	app.post('/account', function(req, res, next) {
